@@ -17,7 +17,7 @@
 
 Clone down this repository
 ````bash
-git clone 
+git clone https://github.com/Alex-Oduor/HMIS-SpringBoot-API
 ````
 
 
