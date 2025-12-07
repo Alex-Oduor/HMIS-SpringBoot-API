@@ -1,52 +1,93 @@
-# Hospital Information Management System (HIMS) – Spring Boot RESTful API with MySQL
-
-### What does it to?
-1. Add a patient.
-2. Retrieve all patients records.
-3. Retrieve patient by id
 
 
-## Prerequisites to run this project on your machine.
+# HMIS Backend Service
 
-* Java jdk 21
-* A running Mysql Server.
-* Postman for testing the endpoints. (optional)
-* Your favourite IDE
+This is a backend service for a Hospital Management Information System (HMIS). It provides RESTful APIs for managing patients, departments, and users.
 
-## To get started
+# Technologies Used
 
-Clone down this repository
+* Java 21
+* Spring Boot 
+* Spring Data JPA / Hibernate
+* MySQL
+* Maven
+
+
+# Getting Started
+
+## 1. Clone down this repository
 ````bash
-git clone https://github.com/Alex-Oduor/HMIS-SpringBoot-API
+    git clone https://github.com/Alex-Oduor/HMIS-SpringBoot-API
+````
+## 2. Configure Database:
+
+   Update application.properties with your MySQL credentials:
+````
+spring.datasource.url=jdbc:mysql://localhost:3306/patients
+spring.datasource.username=root
+spring.datasource.password=yourpassword
+spring.jpa.hibernate.ddl-auto=update
+````
+## 3. Build and Run
+
+Using Maven:
+
+````bash
+mvn clean install
+mvn spring-boot:run
 ````
 
 
-# To test the Api Endpoints from the terminal
+The service will start at: http://localhost:8080
+
+## API Endpoints
+Patient
+
+| Method | URL                 | Description       |
+| ------ | ------------------- | ----------------- |
+| GET    | `/api/patient`      | Get all patients  |
+| GET    | `/api/patient/{id}` | Get patient by ID |
+| POST   | `/api/patient`      | Add new patient   |
+| PUT    | `/api/patient/{id}` | Update patient    |
+
+Department
+
+| Method | URL               | Description         |
+| ------ | ----------------- | ------------------- |
+| GET    | `/api/department` | Get all departments |
+| POST   | `/api/department` | Add new department  |
 
 
-* Adding a patient [POST]
+User
+
+| Method | URL         | Description   |
+| ------ | ----------- | ------------- |
+| GET    | `/api/user` | Get all users |
+| POST   | `/api/user` | Add new user  |
+
+
+
+
+# Testing
+
+Use Postman or curl to test endpoints.
+
+Example:
 ````bash
-curl -X POST http://localhost:8080/api/patients \
-  -H "Content-Type: application/json" \
-  -d "{
-    \"name\": \"Sarah Nanyonga\",
-    \"age\": 28,
-    \"email\": \"sarah@example.com\",
-    \"gender\": \"Female\",
-    \"seenByDoctor\": true
-  }"
+curl -X GET http://localhost:8080/api/patient
+````
 
- 
-````
-* Retrieving patient record by id [GET]
-````bash
-curl -X GET http://localhost:8080/api/patients/1
-````
-* Retrieving all patient records [GET]
-````bash
-curl -X GET http://localhost:8080/api/patients
+# System Design Documentation
 
-````
+This project includes complete system design for the entire HMIS.
+
+Architecture Diagrams include:
+  * Context diagram
+  * Container diagram.
+  * Component diagram.
+
+
+➡️ See [docs](docs/system-design.md) for full details.
 
 
 
