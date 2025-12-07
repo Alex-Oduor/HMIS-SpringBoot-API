@@ -1,4 +1,4 @@
-package com.hmis.hmis_backend.entity;
+package com.hmis.hmis_backend.domain;
 import jakarta.persistence.*;
 
 
@@ -10,17 +10,18 @@ public class Patient {
     @Id  // marks the primary key,
     @GeneratedValue(strategy = GenerationType.IDENTITY) // MySQL-friendly  //automatically generates the ID for each new record.
     private Integer id;
-    private String name;
     private Integer age;
+    private String name;
     private String email;
     private String gender;
 
     @Column(name = "seen_by_doctor")
     private Boolean seenByDoctor;
 
+    // Default constructor needed by Hibernate
     public Patient() {}
 
-    public Patient(String name, Integer age, String email, String gender, Boolean seenByDoctor) {
+    public Patient(Integer age,String name,  String email, String gender, Boolean seenByDoctor) {
         this.name = name;
         this.age=age;
         this.email=email;

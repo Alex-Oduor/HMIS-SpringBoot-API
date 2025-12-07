@@ -1,6 +1,6 @@
-package com.hmis.hmis_backend.services;
+package com.hmis.hmis_backend.service;
 import com.hmis.hmis_backend.repository.PatientRepository;
-import com.hmis.hmis_backend.entity.Patient;
+import com.hmis.hmis_backend.domain.Patient;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

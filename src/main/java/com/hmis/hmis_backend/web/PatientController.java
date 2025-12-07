@@ -1,14 +1,14 @@
-package com.hmis.hmis_backend.controller;
+package com.hmis.hmis_backend.web;
 
-import com.hmis.hmis_backend.entity.Patient;
-import com.hmis.hmis_backend.services.PatientService;
+import com.hmis.hmis_backend.domain.Patient;
+import com.hmis.hmis_backend.service.PatientService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("api/patients")
+@RequestMapping("api/patient")
 public class PatientController {
     private final PatientService patientService;
 
@@ -19,7 +19,7 @@ public class PatientController {
 
   // Adding a new patient
     @PostMapping
-    public Patient createUser(@RequestBody Patient patient){
+    public Patient addPatient(@RequestBody Patient patient){
         return patientService.savePatient(patient);
     }
 

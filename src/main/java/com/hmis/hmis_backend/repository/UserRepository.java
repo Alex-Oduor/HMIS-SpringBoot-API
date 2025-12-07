@@ -1,9 +1,9 @@
 package com.hmis.hmis_backend.repository;
-import com.hmis.hmis_backend.domain.Patient;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import com.hmis.hmis_backend.domain.User;
 
 @Repository
-public interface PatientRepository extends JpaRepository<Patient, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
 }
